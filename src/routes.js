@@ -1,8 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 
-const UserController = require("./controllers/UserController");
-const ProductController = require("./controllers/ProductController");
+const UserController = require("../controllers/UserController");
+const ProductController = require("../controllers/ProductController");
 
 // Users 
 routes.get("/users/:user_id", UserController.getById);

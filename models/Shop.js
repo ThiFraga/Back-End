@@ -1,6 +1,6 @@
-const connection = require("../database/connection");
+const connection = require("../src/database/connection");
 
-modele.exports = {
+module.exports = {
     async create(product) {
         const result = await connection("product").insert(product);
         return result;
