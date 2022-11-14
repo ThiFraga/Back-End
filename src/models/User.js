@@ -1,4 +1,4 @@
-const connection = require("../src/database/connection");
+const connection = require("../database/connection");
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
