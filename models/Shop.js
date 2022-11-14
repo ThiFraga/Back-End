@@ -1,13 +1,21 @@
 const connection = require("../src/database/connection");
 
 module.exports = {
-    async create(product) {
-        const result = await connection("product").insert(product);
+    async create(shop) {
+        const result = await connection("shop").insert(shop);
         return result;
     },
 
-    async getById({ user_id, product_id}) {
-        const result = await connection("product").where({user_id, product_id}).select("*").first();
+    async getProductsByUser(user_id){
+        const result = await connection("shop")
+                        .innerJoin("product","shop.product_id","product.product_id")
+                        .where({"shop.user_id":user_id})
+                        .select("*");
         return result;
+    },
+
+    async delete({ user_id, product_id}){
+        const result = await connection("shop").where({ user_id, product_id}).delete();
+        return result
     },
 };

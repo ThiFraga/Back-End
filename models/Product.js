@@ -6,7 +6,7 @@ module.exports = {
         return result; 
     },
 
-    async getById({product_id}){
+    async getById(product_id){
         const result = await connection("product").where({product_id}).select("*").first();
         return result;
     },

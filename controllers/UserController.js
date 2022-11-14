@@ -21,7 +21,7 @@ module.exports = {
             
             return response.status(200).json(result);
         } catch (err) {
-            console.log("User getById failed: " + err);
+            console.warn("User getById failed: " + err);
             return response.status(500).json({notification: "Internal server error while trying to get User", });
         }
     },
@@ -34,7 +34,7 @@ module.exports = {
             
             return response.status(200).json(result);
         } catch (err) {
-            console.log("User update failed: " + err);
+            console.warn("User update failed: " + err);
             return response.status(500).json({notification: "Internal server error while trying to update User", });
         }
     },
@@ -46,7 +46,7 @@ module.exports = {
             
             return response.status(200).json(result);
         } catch (err) {
-            console.log("User delete failed: " + err);
+            console.warn("User delete failed: " + err);
             return response.status(500).json({notification: "Internal server error while trying to delete User", });
         }
     },
