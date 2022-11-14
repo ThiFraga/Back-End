@@ -3,6 +3,7 @@ exports.up = function(knex) {
       table.increments("product_id").primary().notNullable();
       table.string("name").notNullable();
       table.string("price").notNullable();
+      table.string("source").notNullable;
     });
   };
   
