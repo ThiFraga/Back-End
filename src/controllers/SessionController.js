@@ -1,5 +1,5 @@
 const Firebase = require("../utils/Firebase");
-const UserModel = require("../models/UserModel");
+const UserModel = require("../models/User");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
