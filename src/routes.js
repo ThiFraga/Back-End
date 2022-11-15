@@ -30,9 +30,9 @@ routes.put("/product/:product_id", ProductValidator.update, ProductController.up
 routes.delete("/product/:product_id", ProductValidator.delete, ProductController.delete);
 
 //Shop
-routes.post("/shop", ShopValidator.create, ShopController.create);
-routes.get("/shop/:user_id",ShopValidator.getProducts, ShopController.getProducts);
-routes.delete("/shop/:user_id/:product_id",ShopValidator.getProducts, ShopController.getProducts);
+routes.post("/shop", ShopValidator.create, auth.authenticateToken, ShopController.create);
+routes.get("/shop/:user_id",ShopValidator.getProducts, auth.authenticateToken, ShopController.getProducts);
+routes.delete("/shop/:user_id/:product_id",ShopValidator.getProducts, auth.authenticateToken, ShopController.getProducts);
 
 
 module.exports = routes;
