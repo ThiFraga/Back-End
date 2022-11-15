@@ -1,6 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 
+const auth = require("./middlewares/authentication");
+
 const UserController = require("./controllers/UserController");
 const UserValidator = require("./validators/UserValidator");
 
@@ -9,6 +11,11 @@ const ProductValidator = require("./validators/ProductValidator");
 
 const ShopController = require('./controllers/ShopController');
 const ShopValidator = require("./validators/ShopValidator");
+
+const SessionControler = require("./controllers/SessionController");
+
+// Session
+routes.post("/login", SessionControler.signIn);
 
 // Users 
 routes.get("/users/:user_id",UserValidator.getById, UserController.getById);

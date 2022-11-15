@@ -3,6 +3,7 @@ exports.up = function(knex) {
       table.string("user_id").primary().notNullable();
       table.string("name").notNullable();
       table.string("email").notNullable();
+      table.string("Firebase_id").notNullable();
     });
   };
   
