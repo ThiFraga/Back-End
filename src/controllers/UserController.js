@@ -16,7 +16,7 @@ module.exports = {
             return response.status(200).json(result);
         } catch (err) {
             console.log("User creation failed: " + err);
-            return response.status(500).json({notification: "Internal server error while trying to create User", });
+            return response.status(500).json({notification: "User creation failed: " + err, });
         }
     },
 
